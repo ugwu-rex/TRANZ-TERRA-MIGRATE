@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Rental — Coming Soon</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="page-bg">
+    <main class="car-card" role="main" aria-labelledby="page-title">
+
+      <!-- HERO (image inside rounded card) -->
+      <header class="car-hero">
+        <div class="car-badge" title="logo" aria-hidden="true">
+          <!-- small badge svg -->
+          <img src="Container m.svg" alt="My SVG Image" width="50" height="50">
+        </div>
+        <a class="back" href="index.html" aria-label="Back to home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+          </svg>
+          Back to Home
+        </a>
+        <!-- Use the plane image you provided: save it as plane.jpg in the same folder -->
+        <img src="images/plane.jpg" alt="a plane" class="hero-img">
+      </header>
+
+      <!-- CONTENT -->
+      <section class="car-content" aria-labelledby="page-title" aria-valuenow="85">
+        <h1 id="page-title" class="car-title">Car Rental Coming Soon</h1>
+        <p class="lead">Rent the perfect vehicle for your journey. We're working hard to bring you cars. Stay tuned for
+          updates!</p>
+
+        <div class="launch-caption" aria-hidden="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2v6l4 2" stroke="#1F9BB0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+            <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#1F9BB0" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          <span>Launching in:</span>
+        </div>
+
+        <!-- Countdown -->
+        <div class="count-wrap" aria-live="polite" aria-atomic="true">
+          <div class="count-card">
+            <div id="days" class="count-num">21</div>
+            <div class="count-label">DAYS</div>
+          </div>
+          <div class="count-card">
+            <div id="hours" class="count-num">04</div>
+            <div class="count-label">HOURS</div>
+          </div>
+          <div class="count-card">
+            <div id="minutes" class="count-num">27</div>
+            <div class="count-label">MINUTES</div>
+          </div>
+          <div class="count-card">
+            <div id="seconds" class="count-num">34</div>
+            <div class="count-label">SECONDS</div>
+          </div>
+        </div>
+
+        <!-- Notify -->
+        <div class="notify-box">
+          <h2><label class="notify-check"><input type="checkbox" id="remind" checked=""> Get notified when we
+              launch</label>
+          </h2>
+        </div>
+
+        <div class="notify-row">
+          <form id="notifyForm" class="notify-form" onsubmit="return false;" aria-label="Notify me form">
+            <input id="email" type="email" placeholder="Enter your email" aria-label="Email address" required="">
+            <button id="notifyBtn" type="submit">Notify Me</button>
+          </form>
+        </div>
+        <div id="message" class="car-message" role="status" aria-live="polite">You are subscribed — we'll update you!
+        </div>
+
+        <!-- Feature cards -->
+        <div class="features" role="list">
+          <div class="feature" role="listitem">
+            <img src="images/Container 1.svg" alt="My SVG Image" width="50" height="50">
+            <h4>Global Reach</h4>
+            <p>Access to destinations worldwide</p>
+          </div>
+
+          <div class="feature" role="listitem">
+            <img src="images/Container.svg" alt="My SVG Image" width="50" height="50">
+            <h4>Best Service</h4>
+            <p>Premium customer experience</p>
+          </div>
+
+          <div class="feature" role="listitem">
+            <img src="images/container 3.svg" alt="My SVG Image" width="50" height="50">
+            <h4>Great Value</h4>
+            <p>Competitive prices guaranteed</p>
+          </div>
+        </div>
+
+        <!-- Progress label ABOVE the bar -->
+        <div class="progress-top">
+          <div class="progress-title">Development Progress</div>
+          <div class="progress-percent" id="progressPercent">85%</div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85">
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Separate "Join thousands..." block (outside the card) -->
+    <section class="after-card">
+      <div class="join">Join thousands of travelers already signed up</div>
+      <div class="stats">
+        <div class="stat"><strong>10,000+</strong><span>Early Subscribers</span></div>
+        <div class="stat"><strong>500+</strong><span>Destinations Ready</span></div>
+        <div class="stat"><strong>24/7</strong><span>Support Available</span></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="scripts.js"></script>
+
+</body>
+
+</html>

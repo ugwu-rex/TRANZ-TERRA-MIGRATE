@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - TRANZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <header class="main-header">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Results</a>
+        </header>
+
+        <main class="checkout-container">
+            <div class="checkout-header">
+                <h1>Checkout</h1>
+                <p>Complete your booking and choose your payment method</p>
+            </div>
+
+            <div class="content-grid">
+                <!-- Left Column: Payment Methods -->
+                <section class="payment-section">
+                    <h2>Payment Method</h2>
+
+                    <div class="payment-methods-grid">
+                        <div class="payment-card active" onclick="selectPaymentMethod(this, 'card')">
+                            <div class="icon-wrapper"><i class="fa-regular fa-credit-card"></i></div>
+                            <div class="card-info">
+                                <span class="card-title">Card Payment</span>
+                                <span class="card-desc">Visa, Mastercard, Amex</span>
+                            </div>
+                            <div class="check-mark"><i class="fa-solid fa-check"></i></div>
+                        </div>
+
+                        <div class="payment-card" onclick="selectPaymentMethod(this, 'bank')">
+                            <div class="icon-wrapper"><i class="fa-solid fa-building-columns"></i></div>
+                            <div class="card-info">
+                                <span class="card-title">Bank Transfer</span>
+                                <span class="card-desc">Direct bank transfer</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-card" onclick="selectPaymentMethod(this, 'paypal')">
+                            <div class="badge">15% Off</div>
+                            <div class="icon-wrapper"><i class="fa-solid fa-mobile-screen"></i></div>
+                            <div class="card-info">
+                                <span class="card-title">Paypal</span>
+                                <span class="card-desc">Pay with mobile code</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-card" onclick="selectPaymentMethod(this, 'crypto')">
+                            <div class="icon-wrapper"><i class="fa-brands fa-bitcoin"></i></div>
+                            <div class="card-info">
+                                <span class="card-title">Cryptocurrency</span>
+                                <span class="card-desc">BTC, ETH, USDT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Payment Form -->
+                    <div class="payment-details-section" id="card-details">
+                        <div class="card-form">
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cardholder-name">Cardholder Name</label>
+                                <input type="text" id="cardholder-name" placeholder="JOHN DOE">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date">Expiry Date</label>
+                                    <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="123" maxlength="3">
+                                </div>
+                            </div>
+
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="save-card">
+                                <label for="save-card">Save card for future bookings</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bank Transfer Details -->
+                    <div class="payment-details-section" id="bank-details" style="display: none;">
+                        <div class="bank-info-box">
+                            <h3>Bank Account Details:</h3>
+                            <div class="bank-info-grid">
+                                <div class="info-item">
+                                    <span class="label">Bank Name:</span>
+                                    <span class="value">SkyWings International Bank</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Account Name:</span>
+                                    <span class="value">SkyWings Airlines Ltd</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Account Number:</span>
+                                    <span class="value">1234567890</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">SWIFT Code:</span>
+                                    <span class="value">SKYWUS33</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Reference:</span>
+                                    <span class="value">FLIGHT-HLS2ZNQ8L</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="instruction-box">
+                            <div class="warning-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                            <div class="warning-content">
+                                <strong>Important Instructions:</strong>
+                                <ul>
+                                    <li>Use the reference code when making the transfer</li>
+                                    <li>Processing may take 1-3 business days</li>
+                                    <li>You will receive confirmation via email</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="user-bank-inputs">
+                            <label>Your Account Number</label>
+                            <div class="input-group">
+                                <input type="number" placeholder="Enter your account number">
+                            </div>
+
+                            <label>Your Bank Name</label>
+                            <div class="input-group">
+                                <input type="text" placeholder="Enter your bank name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- USSD Details -->
+                    <div class="payment-details-section" id="ussd-details" style="display: none;">
+                        <div class="info-note">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <p>Dial *123# on your mobile device to complete the payment.</p>
+                        </div>
+                    </div>
+
+                    <div class="crypto-details-section" id="crypto-details">
+                        <h3>Select Cryptocurrency</h3>
+                        <div class="crypto-options">
+                            <button class="crypto-btn active" onclick="selectCrypto(this, 'BTC')">
+                                <span class="crypto-symbol">BTC</span>
+                                <span class="crypto-name">Bitcoin</span>
+                            </button>
+                            <button class="crypto-btn" onclick="selectCrypto(this, 'ETH')">
+                                <span class="crypto-symbol">ETH</span>
+                                <span class="crypto-name">Ethereum</span>
+                            </button>
+                            <button class="crypto-btn" onclick="selectCrypto(this, 'USDT')">
+                                <span class="crypto-symbol">USDT</span>
+                                <span class="crypto-name">Tether (TRC20)</span>
+                            </button>
+                        </div>
+
+                        <div class="wallet-address-container">
+                            <label>Wallet Address:</label>
+                            <div class="address-box">
+                                <span id="wallet-address">bc1qxy2kgdygjrsqtzq2n0ycf2493p83kkfjhx0wlh</span>
+                                <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <div class="warning-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                            <div class="warning-content">
+                                <strong>Important</strong>
+                                <ul>
+                                    <li>Send exact amount to the wallet address</li>
+                                    <li>Wait for blockchain confirmation (5-15 min)</li>
+                                    <li>Do not close this page until confirmed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Column: Order Summary -->
+                <aside class="summary-section">
+                    <div class="summary-card">
+                        <h2>Order Summary</h2>
+
+                        <div class="flight-info">
+                            <div class="airline-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                            <div class="flight-details">
+                                <div class="route" id="flight-route">LHR &rarr; JFK</div>
+                                <div class="flight-meta">Budget Flights • BA183</div>
+                            </div>
+                        </div>
+
+                        <div class="summary-details">
+                            <div class="detail-row">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span id="departure-date">Dec 16, 2024</span>
+                            </div>
+                            <div class="detail-row">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>05:00 PM - 11:30 PM (5h 30m)</span>
+                            </div>
+                            <div class="detail-row">
+                                <i class="fa-regular fa-user"></i>
+                                <span id="passenger-info">1 Passenger • Economy</span>
+                            </div>
+                        </div>
+
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Base Fare</span>
+                                <span id="base-fare">$199.00</span>
+                            </div>
+                            <div class="price-row discount" id="discount-row">
+                                <span>Paypal Discount (15%)</span>
+                                <span id="discount-amount">-$29.85</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Taxes & Fees (10%)</span>
+                                <span id="tax-amount">$16.92</span>
+                            </div>
+                        </div>
+
+                        <div class="total-row">
+                            <div class="total-label">
+                                <span>Total Amount</span>
+                                <span class="saved-amount">You save $29.85</span>
+                            </div>
+                            <span class="total-price">$186.06</span>
+                        </div>
+
+                        <button class="pay-button">Pay $186.06</button>
+
+                        <div class="info-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <p>Your booking will be confirmed immediately after successful payment</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="security-footer">
+                <i class="fa-solid fa-lock"></i> Secure payment processing with 256-bit SSL encryption
+            </div>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-column brand-col">
+                <p>Your Trusted Partner For Seamless Travel Experiences. Book Flights, Hotels, Cars, And Trains All In
+                    One Place.</p>
+                <div class="contact-info">
+                    <p><i class="fa-regular fa-envelope"></i> Support@Tranztermigrate.Com</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Travel Street, NY 10001</p>
+                </div>
+            </div>
+
+            <div class="footer-links-group">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Flights</a></li>
+                        <li><a href="soon.html" target="_blank">Hotels</a></li>
+                        <li><a href="soon.html" target="_blank">Cars</a></li>
+                        <li><a href="soon.html" target="_blank">Explore</a></li>
+                        <li><a href="soon.html" target="_blank">Deals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="soon.html" target="_blank">Help Center</a></li>
+                        <li><a href="soon.html" target="_blank">Contact Us</a></li>
+                        <li><a href="soon.html" target="_blank">Booking FAQs</a></li>
+                        <li><a href="soon.html" target="_blank">Travel Guides</a></li>
+                        <li><a href="soon.html" target="_blank">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="soon.html" target="_blank">Terms & Conditions</a></li>
+                        <li><a href="soon.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="soon.html" target="_blank">Cookie Policy</a></li>
+                        <li><a href="soon.html" target="_blank">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-column newsletter-col">
+                <h4>Subscribe to our newsletter</h4>
+                <p>Get Exclusive Deals And Travel Inspiration Delivered To Your Inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 tranz-terramigrates. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/login" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com/login" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/login" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/login" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
