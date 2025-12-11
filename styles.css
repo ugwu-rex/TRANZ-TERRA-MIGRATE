@@ -49,8 +49,8 @@ body {
 }
 
 .header-logo {
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
 }
 
 a {
@@ -1634,5 +1634,1033 @@ img {
     .count-card {
         width: 80px;
         height: 70px;
+    }
+}
+
+/* ===== BOOKING PAGE STYLES ===== */
+:root {
+    --primary-blue: #2E86AB;
+    --dark-text: #111827;
+    --gray-text: #6B7280;
+    --light-border: #E5E7EB;
+    --white: #FFFFFF;
+    --green: #10B981;
+    --light-green: #D1FAE5;
+    --warning-yellow-bg: #FFFBEB;
+    --warning-yellow-border: #FEF3C7;
+    --footer-bg: #1F2937;
+    --footer-gray: #9CA3AF;
+}
+
+.main-header {
+    padding: 24px 40px;
+}
+
+.back-link {
+    color: var(--gray-text);
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-link:hover {
+    color: var(--dark-text);
+}
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+}
+
+.checkout-header {
+    margin-bottom: 32px;
+}
+
+.checkout-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.checkout-header p {
+    color: var(--gray-text);
+    font-size: 14px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+}
+
+.payment-section h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.payment-card {
+    background: var(--white);
+    border: 1px solid var(--light-border);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.payment-card:hover {
+    border-color: var(--primary-blue);
+}
+
+.payment-card.active {
+    border-color: var(--primary-blue);
+    background-color: #F0F9FF;
+    box-shadow: 0 0 0 1px var(--primary-blue);
+}
+
+.icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: #F1F5F9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-text);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.payment-card.active .icon-wrapper {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.card-desc {
+    font-size: 12px;
+    color: var(--gray-text);
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.check-mark {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    color: var(--primary-blue);
+    display: none;
+}
+
+.payment-card.active .check-mark {
+    display: block;
+}
+
+.discount-banner {
+    background: var(--light-green);
+    border: 1px solid #BBF7D0;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.banner-icon {
+    color: var(--green);
+    font-size: 18px;
+}
+
+.banner-text strong {
+    display: block;
+    color: #14532D;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.banner-text p {
+    color: #166534;
+    font-size: 13px;
+}
+
+.crypto-details-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--gray-text);
+}
+
+.crypto-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.crypto-btn {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s;
+}
+
+.crypto-btn:hover {
+    border-color: var(--gray-text);
+}
+
+.crypto-btn.active {
+    border-color: var(--primary-blue);
+    background: #F0F9FF;
+    color: var(--primary-blue);
+}
+
+.crypto-symbol {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.crypto-name {
+    font-size: 11px;
+    color: var(--gray-text);
+}
+
+.crypto-btn.active .crypto-name {
+    color: var(--primary-blue);
+}
+
+.wallet-address-container {
+    margin-bottom: 24px;
+}
+
+.wallet-address-container label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
+
+.address-box {
+    background: #EFF6FF;
+    border: 1px solid #DBEAFE;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.address-box span {
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--dark-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 12px;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: var(--primary-blue);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.copy-btn:hover {
+    text-decoration: underline;
+}
+
+.warning-box {
+    background: var(--warning-yellow-bg);
+    border: 1px solid var(--warning-yellow-border);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.warning-icon {
+    color: #D97706;
+    font-size: 18px;
+}
+
+.warning-content strong {
+    display: block;
+    color: #92400E;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.warning-content ul {
+    list-style: disc;
+    padding-left: 16px;
+}
+
+.warning-content li {
+    color: #B45309;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.bank-info-box {
+    background: #EFF6FF;
+    border: 1px solid #DBEAFE;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.bank-info-box h3 {
+    color: var(--primary-blue);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.bank-info-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.info-item .label {
+    color: var(--gray-text);
+}
+
+.info-item .value {
+    color: var(--dark-text);
+    font-weight: 500;
+    font-family: monospace;
+    text-align: right;
+}
+
+.instruction-box {
+    background: #FFFBEB;
+    border: 1px solid #FEF3C7;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.user-bank-inputs label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--dark-text);
+}
+
+.user-bank-inputs .input-group {
+    margin-bottom: 16px;
+}
+
+.user-bank-inputs input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.user-bank-inputs input:focus {
+    border-color: var(--primary-blue);
+}
+
+.summary-card {
+    background: var(--white);
+    border: 1px solid var(--light-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.flight-info {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--light-border);
+}
+
+.airline-icon {
+    width: 40px;
+    height: 40px;
+    background: #F0F9FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+}
+
+.route {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.flight-meta {
+    font-size: 12px;
+    color: var(--gray-text);
+}
+
+.summary-details {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--light-border);
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--gray-text);
+    font-size: 13px;
+}
+
+.detail-row i {
+    width: 16px;
+}
+
+.price-breakdown {
+    margin-bottom: 24px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--dark-text);
+}
+
+.price-row.discount {
+    color: var(--green);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--light-border);
+}
+
+.total-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.total-label span:first-child {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.saved-amount {
+    font-size: 12px;
+    color: var(--green);
+}
+
+.total-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.pay-button {
+    width: 100%;
+    background: #2E86AB;
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: background 0.2s;
+}
+
+.pay-button:hover {
+    background: #246d8c;
+}
+
+.info-note {
+    background: #EFF6FF;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    font-size: 11px;
+    color: #1E40AF;
+    line-height: 1.4;
+}
+
+.payment-details-section {
+    margin-bottom: 24px;
+}
+
+.security-footer {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--gray-text);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.main-footer {
+    background: var(--footer-bg);
+    color: var(--footer-gray);
+    padding: 60px 40px 20px;
+    font-size: 14px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.brand-col p {
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.footer-column h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a:hover {
+    color: var(--white);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 10px 16px;
+    color: var(--white);
+}
+
+.newsletter-form button {
+    background: #2E86AB;
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    width: 32px;
+    height: 32px;
+    background: #1E293B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.social-links a:hover {
+    background: #2E86AB;
+    color: var(--white);
+}
+
+/* Booking Page Mobile Responsive */
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-card {
+        padding: 16px;
+    }
+
+    .checkout-container {
+        padding: 0 20px 40px;
+    }
+
+    .main-header {
+        padding: 20px;
+    }
+}
+
+/* ===== REGISTER PAGE STYLES ===== */
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 100px auto;
+    min-height: calc(100vh - 200px);
+}
+
+.auth-container .tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.auth-container .tabs button {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 16px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #6c757d;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-container .tabs button.active {
+    color: #4292A8;
+    border-bottom-color: #4292A8;
+    font-weight: 600;
+}
+
+.auth-container .form {
+    display: none;
+}
+
+.auth-container .form.active {
+    display: block;
+}
+
+.auth-container .form h2 {
+    margin-top: 0;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-container .form label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #495057;
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 15px;
+}
+
+.auth-container .form input {
+    width: 100%;
+    padding: 12px 15px;
+    padding-right: 40px;
+    border: 1px solid #cfd4da;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.auth-container .form input:focus {
+    border-color: #4292A8;
+    box-shadow: 0 0 0 3px rgba(66, 146, 168, 0.25);
+    outline: none;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.password-field .toggle-password:hover {
+    opacity: 1;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 20px;
+    background: #4292A8;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #36788d;
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #555;
+}
+
+.switch-text a {
+    color: #4292A8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.separator::before {
+    margin-right: 10px;
+}
+
+.separator::after {
+    margin-left: 10px;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 12px 0;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.social-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Register Page Mobile Responsive */
+@media (max-width: 600px) {
+    .auth-container {
+        margin: 80px auto 40px;
+        padding: 20px;
+        max-width: 95%;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        margin: 60px auto 40px;
+        padding: 16px;
+        border-radius: 10px;
+    }
+}
+
+/* Card Payment Form Styles */
+.card-form {
+    margin-top: 24px;
+}
+
+.card-form .form-group {
+    margin-bottom: 20px;
+}
+
+.card-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.card-form input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-form input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(45, 140, 255, 0.1);
+}
+
+.card-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.card-form .form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.card-form .form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.card-form .form-checkbox label {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#card-details {
+    display: block;
+}
+
+#bank-details,
+#paypal-details,
+#crypto-details {
+    display: none;
+}
+
+/* ===== COMING SOON PAGE STYLES ===== */
+.coming-soon-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.coming-soon-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00, #ffb347);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.coming-soon-page .container {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.coming-soon-page .coming-soon {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.coming-soon-page .tagline {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.coming-soon-page .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.coming-soon-page .countdown div {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.coming-soon-page .countdown div span {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: 400;
+    color: #f0f0f0;
+}
+
+@media (max-width: 480px) {
+    .coming-soon-page .coming-soon {
+        font-size: 2rem;
+    }
+
+    .coming-soon-page .tagline {
+        font-size: 1rem;
+    }
+
+    .coming-soon-page .countdown {
+        flex-direction: column;
+        gap: 10px;
     }
 }
