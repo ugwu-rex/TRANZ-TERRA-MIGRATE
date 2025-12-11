@@ -1305,3 +1305,360 @@ img {
         font-size: 16px;
     }
 }
+
+/* ===== CAR COMING SOON PAGE STYLES ===== */
+.page-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.car-card {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.car-hero {
+    position: relative;
+    height: 280px;
+    background: linear-gradient(135deg, #1F9BB0 0%, #15738a 100%);
+    overflow: hidden;
+}
+
+.car-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 2;
+}
+
+.back {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    z-index: 2;
+    transition: opacity 0.2s;
+}
+
+.back:hover {
+    opacity: 0.8;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.car-content {
+    padding: 2.5rem 2rem;
+}
+
+.car-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.lead {
+    font-size: 1.125rem;
+    color: #4a5568;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.launch-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #1F9BB0;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.count-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.count-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: white;
+}
+
+.count-num {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.count-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+.notify-box {
+    margin-bottom: 1.5rem;
+}
+
+.notify-check {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: #2d3748;
+    cursor: pointer;
+}
+
+.notify-check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.notify-row {
+    margin-bottom: 1rem;
+}
+
+.notify-form {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.notify-form input {
+    flex: 1;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.notify-form input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.notify-form button {
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+}
+
+.notify-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.car-message {
+    display: none;
+    padding: 1rem;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.car-message.show {
+    display: block;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature img {
+    margin-bottom: 1rem;
+}
+
+.feature h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: 0.875rem;
+    color: #718096;
+}
+
+.progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.progress-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.progress-percent {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.progress-wrap {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.after-card {
+    max-width: 800px;
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.join {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat strong {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.stat span {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* Mobile Responsive for Car Page */
+@media (max-width: 768px) {
+    .car-hero {
+        height: 200px;
+    }
+
+    .car-title {
+        font-size: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .count-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .count-num {
+        font-size: 1.5rem;
+    }
+
+    .notify-form {
+        flex-direction: column;
+    }
+
+    .notify-form button {
+        width: 100%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .count-wrap {
+        gap: 0.75rem;
+    }
+
+    .count-card {
+        padding: 1rem 0.5rem;
+    }
+
+    .count-num {
+        font-size: 1.25rem;
+    }
+
+    .count-label {
+        font-size: 0.625rem;
+    }
+}
