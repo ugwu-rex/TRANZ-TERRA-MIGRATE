@@ -1219,8 +1219,8 @@ img {
 
 @media (max-width: 480px) {
     .header-logo {
-        height: 36px;
-        width: 36px;
+        height: 50px;
+        width: 50px;
     }
 
     .hero {
