@@ -831,6 +831,7 @@ img {
     color: #4b5563;
 }
 
+/* About Values Card */
 .about-values-card {
     background: white;
     border-radius: 16px;
@@ -898,6 +899,40 @@ img {
 .about-value-description {
     margin: 0;
     color: #4b5563;
+}
+
+/* ===== ABOUT SECTION RESPONSIVE ===== */
+@media (min-width: 1024px) {
+    .about-section-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+    
+    .about-section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-top: 40px;
+    }
+    
+    .about-values-card {
+        padding: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-section-text {
+        font-size: 16px;
+    }
+    
+    .about-values-card {
+        padding: 24px;
+    }
 }
 
 /* ===== FOOTER SECTION ===== */
