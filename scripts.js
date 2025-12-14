@@ -19,7 +19,7 @@ function selectPaymentMethod(clickedCard, paymentType) {
     const allSections = document.querySelectorAll('.payment-details-section, .crypto-details-section');
     allSections.forEach(section => section.style.display = 'none');
 
-    // Show the correct payment detail section
+    // Show the correct payment detail section (if exists)
     const detailsToShow = document.getElementById(paymentType + '-details');
     if (detailsToShow) detailsToShow.style.display = 'block';
 
@@ -516,13 +516,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // AUTHENTICATION STATE MANAGEMENT
-    // Check if user is logged in and hide Sign In/Register buttons on index.html
-    //const isLoggedIn = localStorage.getItem('isLoggedIn');
+    // AUTHENTICATION STATE MANAGEMENT (SESSION-BASED)
+    // Using sessionStorage - clears on page refresh/reopen
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
     const navRight = document.querySelector('.nav-right');
     const headerLogo = document.querySelector('.header-logo-container');
-
 
     if (isLoggedIn === 'true') {
         // Hide Sign In/Register buttons and logo during current session
@@ -589,7 +587,7 @@ function updateCountdown() {
     const minutes = Math.floor((sec % 3600) / 60);
     const seconds = sec % 60;
 
-    
+
     // Check if we're on car.html by looking for the car-specific class
     const usePadding = document.querySelector('.car-card') !== null;
 
@@ -755,8 +753,6 @@ if (document.getElementById('signin-tab') && document.getElementById('register-t
         if (emailEl && passEl) {
             console.log("Sign In Submitted:", emailEl.value, passEl.value);
 
-            // Set authentication flag in localStorage
-            //localStorage.setItem('isLoggedIn', 'true');(changed it to session flag because when one logs in once, the browser stores the data and when you click the link to open the website again the register and sign in button does not come up. So I think this is the best way to handle  the function as we don't have access to backend for actual authentication.)
             // Set session flag (clears on page refresh)
             sessionStorage.setItem('isLoggedIn', 'true');
 
@@ -789,8 +785,6 @@ if (document.getElementById('signin-tab') && document.getElementById('register-t
 
             console.log("Register Submitted:", nameEl.value, emailEl.value, passEl.value, confirmPassEl.value);
 
-            // Set authentication flag in localStorage
-            //localStorage.setItem('isLoggedIn', 'true');(changed it to session flag because when one logs in once, the browser stores the data and when you click the link to open the website again the register and sign in button does not come up. So I think this is the best way to handle  the function as we don't have access to backend for actual authentication.)
             // Set session flag (clears on page refresh)
             sessionStorage.setItem('isLoggedIn', 'true');
 
