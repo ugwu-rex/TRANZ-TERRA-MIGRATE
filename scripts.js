@@ -1,7 +1,4 @@
-/* ===== UNIFIED SCRIPTS FOR LANDING PAGE AND BOOKING PAGE ===== */
-
 // ===== WALLET ADDRESSES FOR CRYPTO PAYMENTS (BOOKING PAGE) =====
-// WARNING: These are placeholder addresses. Replace with real wallet addresses before production use!
 const walletAddresses = {
     'BTC': 'rexb2kgdygjrsqtzq2n0ycf2493p83kkfjhx0wlh',
     'ETH': '0x71C7656EC7ab88b098rexfB751B7401B5d2e3f4a',
@@ -22,7 +19,7 @@ function selectPaymentMethod(clickedCard, paymentType) {
     const allSections = document.querySelectorAll('.payment-details-section, .crypto-details-section');
     allSections.forEach(section => section.style.display = 'none');
 
-    // Show the correct payment detail section (if exists)
+    // Show the correct payment detail section
     const detailsToShow = document.getElementById(paymentType + '-details');
     if (detailsToShow) detailsToShow.style.display = 'block';
 
@@ -521,12 +518,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // AUTHENTICATION STATE MANAGEMENT
     // Check if user is logged in and hide Sign In/Register buttons on index.html
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    //const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
     const navRight = document.querySelector('.nav-right');
+    const headerLogo = document.querySelector('.header-logo-container');
 
-    if (isLoggedIn === 'true' && navRight) {
-        // Hide the entire nav-right section which contains Sign In and Register buttons
-        navRight.style.display = 'none';
+
+    if (isLoggedIn === 'true') {
+        // Hide Sign In/Register buttons and logo during current session
+        if (navRight) {
+            navRight.style.display = 'none';
+        }
+        if (headerLogo) {
+            headerLogo.style.display = 'none';
+        }
     }
 }); // End of DOMContentLoaded
 
