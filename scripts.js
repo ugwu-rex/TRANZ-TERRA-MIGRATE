@@ -751,7 +751,9 @@ if (document.getElementById('signin-tab') && document.getElementById('register-t
             console.log("Sign In Submitted:", emailEl.value, passEl.value);
 
             // Set authentication flag in localStorage
-            localStorage.setItem('isLoggedIn', 'true');
+            //localStorage.setItem('isLoggedIn', 'true');(changed it to session flag because when one logs in once, the browser stores the data and when you click the link to open the website again the register and sign in button does not come up. So I think this is the best way to handle  the function as we don't have access to backend for actual authentication.)
+            // Set session flag (clears on page refresh)
+            sessionStorage.setItem('isLoggedIn', 'true');
 
             window.location.href = "index.html";
         }
@@ -783,7 +785,9 @@ if (document.getElementById('signin-tab') && document.getElementById('register-t
             console.log("Register Submitted:", nameEl.value, emailEl.value, passEl.value, confirmPassEl.value);
 
             // Set authentication flag in localStorage
-            localStorage.setItem('isLoggedIn', 'true');
+            //localStorage.setItem('isLoggedIn', 'true');(changed it to session flag because when one logs in once, the browser stores the data and when you click the link to open the website again the register and sign in button does not come up. So I think this is the best way to handle  the function as we don't have access to backend for actual authentication.)
+            // Set session flag (clears on page refresh)
+            sessionStorage.setItem('isLoggedIn', 'true');
 
             // Redirect to index.html
             window.location.href = "index.html";
